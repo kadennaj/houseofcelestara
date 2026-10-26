@@ -15,10 +15,10 @@ def text(i):
 def content(i):
     node = BeautifulSoup(str(blocks[i]), 'html.parser')
     for el in node.find_all(True):
-        el.attrs = {'href': BASE + el['href']} if el.name == 'a' and el.get('href','').startswith('/') else {}
+        el.attrs = {'href': 'booking.html?experience=intuitive-healing'} if el.name == 'a' and el.get('href','').startswith('/') else {}
     return node.div.decode_contents()
 
-book = f'<a class="button" href="{BASE}/contact">Book now <span aria-hidden="true">↗</span></a>'
+book = f'<a class="button" href="booking.html">Book now <span aria-hidden="true">↗</span></a>'
 testimonials = []
 for item in soup.select('.list-item'):
     title = item.select_one('.list-item-content__title')
@@ -52,15 +52,16 @@ html = f'''<!doctype html>
   <meta property="og:description" content="A sacred sanctuary for healing, ceremony, and spiritual awakening.">
   <link rel="preload" href="assets/hero.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
+  <script src="navigation.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to Content</a>
 <header class="site-header"><div class="header-inner">
   <a href="#" class="wordmark" aria-label="House of Celestara by Zara"><span>House of Celestara</span><small>By Z a r a</small></a>
-  <nav class="desktop-nav" aria-label="Main navigation"><a href="{BASE}/about">About</a><a href="#offerings">OFFERINGS</a><a href="{BASE}/contact">Contact</a></nav>
+  <nav class="desktop-nav" aria-label="Main navigation"><a href="#zara">About</a><a href="#offerings">OFFERINGS</a><a href="#contact">Contact</a></nav>
   <div class="header-actions">{book}<button class="menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button></div>
-</div><nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="{BASE}/about">About</a><a href="#offerings">OFFERINGS</a><a href="{BASE}/contact">Contact</a><a href="https://www.instagram.com/houseofcelestarabyzara/">Instagram</a><a href="https://www.tiktok.com/@houseof.celestara">TikTok</a></nav></header>
+</div><nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#zara">About</a><a href="#offerings">OFFERINGS</a><a href="#contact">Contact</a><a href="https://www.instagram.com/houseofcelestarabyzara/">Instagram</a><a href="https://www.tiktok.com/@houseof.celestara">TikTok</a></nav></header>
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
     <img class="hero-image" src="assets/hero.jpg" alt="" fetchpriority="high" width="2500" height="1662">
@@ -82,7 +83,7 @@ html = f'''<!doctype html>
   </section>
   <section class="meet section-wrap" id="zara">
     <div class="portrait reveal"><img src="assets/zara.jpg" alt="Zara" width="1024" height="1024" loading="lazy"></div>
-    <div class="meet-copy reveal"><span class="eyebrow">{escape(text(8))}</span><h2>{escape(text(10))}</h2><div class="credentials">{content(9)}</div><a class="text-link" href="{BASE}/about">About <span aria-hidden="true">↗</span></a></div>
+    <div class="meet-copy reveal"><span class="eyebrow">{escape(text(8))}</span><h2>{escape(text(10))}</h2><div class="credentials">{content(9)}</div><a class="text-link" href="#zara">About <span aria-hidden="true">↗</span></a></div>
   </section>
   <section class="offerings" id="offerings"><div class="section-wrap">
     <div class="section-heading reveal"><h2>{escape(text(11))}</h2><span class="small-star" aria-hidden="true">✦</span></div>
@@ -95,12 +96,19 @@ html = f'''<!doctype html>
   <section class="gallery-section"><div class="gallery-track" aria-label="Ceremony photo gallery">{gallery}</div><div class="gallery-controls section-wrap"><span class="small-star" aria-hidden="true">✧</span><div><button class="round-button" id="gallery-prev" aria-label="Previous photos">←</button><button class="round-button" id="gallery-next" aria-label="Next photos">→</button></div></div></section>
   <section class="closing section-wrap reveal"><span class="small-star" aria-hidden="true">✦</span><h2>{escape(text(20))}</h2>{book}</section>
 </main>
-<footer><div class="section-wrap footer-inner"><div class="footer-top"><div class="footer-brand"><img src="assets/logo.png" alt="House of Celestara" loading="lazy" width="1140" height="531"><h2>House of Celestara By Z a r a</h2><p>Intuitive Energy Healer | Spiritual Teacher &amp; Guide</p></div><div class="contact-info"><p>📍 Maple, Ontario</p><a href="mailto:houseofcelestara@gmail.com">📧 houseofcelestara@gmail.com</a><a href="tel:+14169923515">📱 416-992-3515</a><p>Follow on Instagram <a href="https://www.instagram.com/houseofcelestarabyzara/">@houseofcelestarabyzara</a> &amp; TikTok: <a href="https://www.tiktok.com/@houseof.celestara">@houseof.celestara</a></p></div></div>
+<footer id="contact"><div class="section-wrap footer-inner"><div class="footer-top"><div class="footer-brand"><img src="assets/logo.png" alt="House of Celestara" loading="lazy" width="1140" height="531"><h2>House of Celestara By Z a r a</h2><p>Intuitive Energy Healer | Spiritual Teacher &amp; Guide</p></div><div class="contact-info"><p>📍 Maple, Ontario</p><a href="mailto:houseofcelestara@gmail.com">📧 houseofcelestara@gmail.com</a><a href="tel:+14169923515">📱 416-992-3515</a><p>Follow on Instagram <a href="https://www.instagram.com/houseofcelestarabyzara/">@houseofcelestarabyzara</a> &amp; TikTok: <a href="https://www.tiktok.com/@houseof.celestara">@houseof.celestara</a></p></div></div>
   <details class="disclaimer"><summary>Disclaimer<span aria-hidden="true">+</span></summary><div>{clean_disclaimer.div.decode_contents()}</div></details>
-  <div class="footer-bottom"><span>House of Celestara By Z a r a</span><p>Made with <a href="https://squarespace.com/">Squarespace</a></p></div>
+  <div class="footer-bottom"><span>House of Celestara By Z a r a</span><a href="booking.html">Book now <span aria-hidden="true">→</span></a></div>
 </div></footer>
 <dialog id="lightbox" aria-label="Ceremony photo"><button class="lightbox-close round-button" aria-label="Close image">×</button><button class="lightbox-prev round-button" aria-label="Previous image">←</button><img alt=""><button class="lightbox-next round-button" aria-label="Next image">→</button><p class="lightbox-count" aria-live="polite"></p></dialog>
 </body></html>'''
 (ROOT/'dist/index.html').write_text(html)
+booking = (ROOT/'templates/booking.html').read_text()
+choices = ''
+slugs = ['intuitive-healing', 'ceremonies-circles', 'spiritual-workshops', 'retreats-immersions']
+for n, i in enumerate([12, 14, 16, 18]):
+    choices += f'<label class="experience-option"><input type="radio" name="experience" value="{slugs[n]}" required><span class="option-content"><strong>{escape(text(i))}</strong><span>{escape(["Personal, heart-led 1:1 private healing experiences", "Cacao and Despacho ceremonies", "Spiritual awakening, energy work and self-healing", "Full-day and weekend retreats"][n])}</span></span><span class="radio-mark" aria-hidden="true"></span></label>'
+booking = booking.replace('<!-- EXPERIENCE_OPTIONS -->', choices)
+(ROOT/'dist/booking.html').write_text(booking)
 (ROOT/'site-source/content.json').write_text(json.dumps({'source':BASE,'blocks':[b.get_text('',strip=False).strip() for b in blocks],'testimonials':testimonials},ensure_ascii=False,indent=2))
 print(f'Built landing page: {len(blocks)} original text blocks, {len(testimonials)} testimonials, {len(gallery_data)} gallery photos.')

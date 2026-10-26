@@ -1,6 +1,6 @@
 # House of Celestara by Zara
 
-A responsive, buildless landing page reconstructed from the live source at https://www.houseofcelestara.com/ on October 26, 2026.
+The new House of Celestara website: a responsive landing page and an interactive mock booking experience.
 
 ## Preview
 
@@ -21,8 +21,8 @@ Vercel does not run the optional Python content tools. The finished HTML, CSS, J
 - `site-source/assets.json`: source URL for every downloaded asset.
 - Ten original assets are hosted locally, including the original logo, ocean photograph, Zara portrait, candle/cacao still life, and six gallery photographs.
 - Original marketing copy, four offerings, professional labels, testimonials, contact information, social handles, and disclaimer are retained. Layout, hierarchy, decorative marks, accessibility descriptions, and interaction controls are new.
-- About, Contact/Book now, the healing-detail link, Google reviews, and social destinations point to the original external destinations. Phone and email are actionable.
-- The original Squarespace attribution is retained as source copy.
+- About and Contact navigate to sections on the new landing page. Every Book now link opens the local `booking.html` page. The healing-detail link opens that page with Intuitive Healing Experiences preselected. Phone, email, and social links remain actionable.
+- The outdated Squarespace attribution has been removed. There are no legacy website URLs in deployed HTML, CSS, or JavaScript.
 
 ## Design
 
@@ -36,6 +36,8 @@ Phone: compact menu → responsive ocean hero → the same sections in a single 
 
 Interactions: mobile menu with Escape support, anchor navigation, nine-slide manual testimonial carousel, horizontally scrolling gallery, image dialog with arrow keys/Escape/focus return, and native disclaimer disclosure. Motion respects `prefers-reduced-motion`; navigation opacity respects reduced transparency. Text and content remain available without animation support.
 
-## Access limitations
+## Mock booking
 
-The public landing page and its image CDN were accessible. About, Contact, and healing-detail pages returned HTTP 200. The site's booking/contact form remains on the original website; no form submission or purchase was performed. This project does not recreate the site's backend or additional pages. Ownership and third-party licensing of source assets have not been independently verified; source URLs are retained for review.
+The booking flow is a browser-only demo. It offers the four existing experiences, a preferred date, explicitly labeled sample times in Toronto time, and name/email/optional notes. It validates each step, supports going back without losing entries, and displays a preview summary. It does not submit, store, email, charge, or reserve anything. Reloading clears the form.
+
+Checked the complete flow in the browser, including required experience validation, date/time selection, details, preview summary, and mobile overflow. Original asset provenance remains archived in `site-source/`; it is not part of the deployed `dist` directory.

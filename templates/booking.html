@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book your experience — House of Celestara</title>
+  <meta name="description" content="Explore a booking preview for House of Celestara. Choose an experience and a preferred date and time.">
+  <meta name="theme-color" content="#f9f8f5">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="booking.css">
+  <script src="navigation.js" defer></script>
+  <script src="booking.js" defer></script>
+</head>
+<body class="booking-page">
+<a class="skip" href="#main">Skip to Content</a>
+<header class="site-header"><div class="header-inner">
+  <a href="./" class="wordmark" aria-label="House of Celestara by Zara"><span>House of Celestara</span><small>By Z a r a</small></a>
+  <nav class="desktop-nav" aria-label="Main navigation"><a href="./#zara">About</a><a href="./#offerings">OFFERINGS</a><a href="./#contact">Contact</a></nav>
+  <div class="header-actions"><a class="booking-home" href="./"><span aria-hidden="true">←</span> Back to home</a><button class="menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button></div>
+</div><nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="./">Home</a><a href="./#zara">About</a><a href="./#offerings">OFFERINGS</a><a href="./#contact">Contact</a></nav></header>
+<main id="main" class="booking-layout section-wrap">
+  <aside class="booking-aside">
+    <div class="booking-art"><img src="assets/hero.jpg" alt="Sunset over a calm ocean" width="2500" height="1662"><div class="booking-art-copy"><span aria-hidden="true">✦</span><p>“Know the truth<br>of who you are”</p><small>House of Celestara By Z a r a</small></div></div>
+    <div class="booking-summary"><span class="eyebrow">Your booking preview</span><dl><div><dt>Experience</dt><dd id="summary-experience">Choose an offering</dd></div><div><dt>Date &amp; time</dt><dd id="summary-when">Choose a preferred time</dd></div></dl><p class="summary-note">Sample availability · America/Toronto</p></div>
+  </aside>
+  <section class="booking-main" aria-labelledby="booking-title">
+    <div class="demo-badge"><span aria-hidden="true"></span> Booking preview</div>
+    <h1 id="booking-title">Book your<br><em>experience.</em></h1>
+    <p class="booking-intro">Choose an offering and a time that works for you.</p>
+    <p class="demo-note">Demo only. Nothing is booked or sent.</p>
+    <ol class="booking-progress" aria-label="Booking steps"><li aria-current="step"><span>01</span> Experience</li><li><span>02</span> Date &amp; time</li><li><span>03</span> Your details</li></ol>
+    <noscript><p class="no-script">Enable JavaScript to explore the booking preview. <a href="./">Return home</a>.</p></noscript>
+    <form id="booking-form" hidden novalidate>
+      <fieldset data-step="0"><legend>Choose your experience.</legend><div class="experience-options"><!-- EXPERIENCE_OPTIONS --></div></fieldset>
+      <fieldset data-step="1" hidden disabled><legend>Find your moment.</legend>
+        <p class="step-description">Pick a preferred date and a sample time.</p>
+        <label class="field-label" for="booking-date">Preferred date</label><input id="booking-date" name="date" type="date" required aria-describedby="date-note"><p class="field-note" id="date-note">Times are illustrative and do not reflect real availability.</p>
+        <fieldset class="time-options"><legend>Sample times <span>· Toronto time</span></legend><div class="time-grid"><label><input type="radio" name="time" value="10:00 AM" required><span>10:00 AM</span></label><label><input type="radio" name="time" value="1:00 PM"><span>1:00 PM</span></label><label><input type="radio" name="time" value="4:00 PM"><span>4:00 PM</span></label></div></fieldset>
+      </fieldset>
+      <fieldset data-step="2" hidden disabled><legend>A little about you.</legend><p class="step-description">Use sample details to try the preview.</p>
+        <label class="field-label" for="booking-name">Name</label><input id="booking-name" name="name" type="text" autocomplete="off" placeholder="Your name" maxlength="100" required>
+        <label class="field-label" for="booking-email">Email</label><input id="booking-email" name="email" type="email" autocomplete="off" placeholder="you@example.com" maxlength="200" required>
+        <label class="field-label" for="booking-notes">Anything you’d like to share? <span>Optional</span></label><textarea id="booking-notes" name="notes" rows="3" maxlength="1000" placeholder="A note for your experience"></textarea>
+        <p class="field-note">Details stay on this page and disappear when you reload.</p>
+      </fieldset>
+      <p id="booking-error" role="alert" hidden></p>
+      <div class="booking-actions"><button type="button" id="booking-back" class="back-button" hidden><span aria-hidden="true">←</span> Back</button><button type="submit" id="booking-next" class="button">Continue <span aria-hidden="true">→</span></button></div>
+    </form>
+    <section id="booking-result" class="booking-result" hidden aria-labelledby="result-title"><span class="result-mark" aria-hidden="true">✓</span><h2 id="result-title" tabindex="-1">Your preview is ready.</h2><p>This is a demo summary. No appointment has been booked, no payment taken, and no details sent.</p><dl id="result-details"></dl><div class="result-actions"><button class="button" id="edit-booking" type="button">Edit details <span aria-hidden="true">←</span></button><button class="back-button" id="restart-booking" type="button">Start again</button></div></section>
+    <p class="booking-footer-note"><span aria-hidden="true">✧</span> House of Celestara By Z a r a</p>
+  </section>
+</main>
+<footer class="booking-footer"><div class="section-wrap"><a href="./">House of Celestara</a><span>Booking preview · No payment required</span></div></footer>
+</body>
+</html>

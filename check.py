@@ -21,6 +21,16 @@ for a in page.select('a[href]'):
     href = a['href']
     if href.startswith('#') and href != '#':
         assert page.find(id=href[1:]), f'Missing anchor: {href}'
-    elif not href.startswith('#'):
-        assert href.startswith(('https://', 'mailto:', 'tel:')), f'Invalid destination: {href}'
+    elif not href.startswith(('#', 'https://', 'mailto:', 'tel:')):
+        target = href.split('?')[0].split('#')[0]
+        assert (root/'dist'/target).is_file(), f'Missing local page: {href}'
 print(f'PASS: {len(nodes)} source content groups retain every original text fragment; 4 offerings, 9 testimonials, 6 gallery images; all local files and anchor destinations exist.')
+
+for file in (root/'dist').glob('*'):
+    if file.suffix in ('.html', '.css', '.js'):
+        assert 'houseofcelestara.com' not in file.read_text(), f'Legacy website reference: {file}'
+booking = BeautifulSoup((root/'dist/booking.html').read_text(), 'html.parser')
+assert len(booking.select('input[name=experience]')) == 4
+assert len(booking.select('[data-step]')) == 3
+assert booking.select_one('#booking-form').has_attr('hidden')
+print('PASS: internal booking page, four original experiences, three steps, no legacy website references in deployed files.')
