@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/97ef4773-a370-46ba-b033-898937e9be59/Grey+Black+Minimalist+Simple+Project+Presentation-Photoroom.png?format=1500w",
+    "dimensions": null,
+    "alt": "House of Celestara by Zara",
+    "file": "assets/logo.png"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/1701210633857-LOUH8Z3PWS5PAZ2210ZK/image-asset.jpeg",
+    "dimensions": "2500x1662",
+    "alt": "",
+    "file": "assets/hero.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/4a6763b9-8d6d-45a0-8446-720a923054c7/Zglam8.JPG",
+    "dimensions": "1024x1024",
+    "alt": "",
+    "file": "assets/zara.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/e2eead60-54a7-4583-900d-89f4f61d9aa6/image-asset.jpg",
+    "dimensions": "2500x1666",
+    "alt": "",
+    "file": "assets/healing.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/464ca4e1-c5e1-47c5-bd66-00df2b1c615d/healingcircle5.jpg",
+    "dimensions": "1319x1490",
+    "alt": "",
+    "file": "assets/healingcircle5.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/3a785849-af9e-4dc3-bc52-60fc2e6cb25b/despacho5.jpg",
+    "dimensions": "3024x4032",
+    "alt": "",
+    "file": "assets/despacho5.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/6f9c76c5-6db1-4e48-b222-69f363a73e0f/despacho1.jpg",
+    "dimensions": "4284x5712",
+    "alt": "",
+    "file": "assets/despacho1.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/129444e8-7e95-471b-a639-d241750ceca5/despacho6.jpg",
+    "dimensions": "4284x5712",
+    "alt": "",
+    "file": "assets/despacho6.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/61cb30ed-ec7a-413a-97c7-284ceea4af53/firepit.jpeg",
+    "dimensions": "2048x1536",
+    "alt": "",
+    "file": "assets/firepit.jpg"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/6500f1169962c4616b7083c7/086e250b-b5bf-4b08-8dd2-29b947e4dab8/moonpic.jpeg",
+    "dimensions": "1028x1826",
+    "alt": "",
+    "file": "assets/moonpic.jpg"
+  }
+]
